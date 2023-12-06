@@ -22,3 +22,10 @@ func TestThreeWords(t *testing.T) {
 		t.Errorf("Wordcount(\"text\") = %s; want 1 3 14", result)
 	}
 }
+
+func TestTwoLines(t *testing.T) {
+	result := Wordcount("text\ntext")
+	if result != "2 2 9" {
+		t.Errorf("Wordcount(\"text\") = %s; want 2 2 8", result)
+	}
+}

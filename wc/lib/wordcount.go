@@ -6,8 +6,11 @@ import (
 )
 
 func Wordcount(s string) (res string) {
-	lines := len(strings.Split(s, "\n"))
-	words := len(strings.Split(s, " "))
-	chars := len(s)
-	return fmt.Sprintf("%d %d %d", lines, words, chars)
+	lines := strings.Split(strings.Trim(s, "\n"), "\n")
+	wordCount := 0
+	for i := 0; i < len(lines); i++ {
+		wordCount = wordCount + len(strings.Split(lines[i], " "))
+
+	}
+	return fmt.Sprintf("%d %d %d", len(lines), wordCount, len(s))
 }
