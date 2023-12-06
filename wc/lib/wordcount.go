@@ -1,8 +1,13 @@
 package wc
 
+import (
+	"fmt"
+	"strings"
+)
+
 func Wordcount(s string) (res string) {
-	if s == "text" {
-		return "1 1 4"
-	}
-	return "1 2 9"
+	lines := len(strings.Split(s, "\n"))
+	words := len(strings.Split(s, " "))
+	chars := len(s)
+	return fmt.Sprintf("%d %d %d", lines, words, chars)
 }
